@@ -38,7 +38,7 @@ const router = createBrowserRouter([{
     { path: '/admin/*', element: <AdminPage /> },
     { path: '*', element: <main className="container section page-section"><h1>الصفحة غير موجودة</h1><p>تحقق من الرابط أو انتقل إلى الصفحة الرئيسية.</p><a className="button button-primary" href="/">الرئيسية</a></main> },
   ],
-}]);
+}], { basename: import.meta.env.BASE_URL });
 
 export function App() {
   return <QueryClientProvider client={queryClient}><Suspense fallback={<main className="container section"><LoadingState /></main>}><RouterProvider router={router} /></Suspense></QueryClientProvider>;
